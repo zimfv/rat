@@ -5,10 +5,10 @@ There are two aggregated tables with some concided columns:
 
 | Name | A_1 | A_2 | ... | A_n |
 | --- | --- | --- | --- | --- |
-| Name_1$ | $a_1^1$ | $a_2^1$ | ... | $a_n^1$ |
-| Name_2$ | $a_1^2$ | $a_2^2$ | ... | $a_n^2$ |
+| Name_1 | $a_1^1$ | $a_2^1$ | ... | $a_n^1$ |
+| Name_2 | $a_1^2$ | $a_2^2$ | ... | $a_n^2$ |
 | ... | ... | ... | ... | ... |
-| Name_N$ | $a_1^N$ | $a_2^N$ | ... | $a_n^N$ |
+| Name_N | $a_1^N$ | $a_2^N$ | ... | $a_n^N$ |
 
 | Name | B_1 | B_2 | ... | B_m |
 | --- | --- | --- | --- | --- |
