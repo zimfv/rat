@@ -41,12 +41,12 @@ Such that
 
 Of course there exists a lot of solves for that's system. So I make a guess that results are most independent. 
 
-<img src="https://latex.codecogs.com/svg.image?\bg_white&space;\cfrac{a_i^k}{S^k}&space;\cfrac{b_j^k}{S^k}&space;-&space;\cfrac{x_{ij}^k}{S^k}&space;\to&space;0" title="\bg_white \cfrac{a_i^k}{S^k} \cfrac{b_j^k}{S^k} - \cfrac{x_{ij}^k}{S^k} \to 0" />
+<img src="https://latex.codecogs.com/gif.image?\dpi{110}&space;\bg_white&space;&space;\cfrac{a_i^k}{S^k}&space;\cfrac{b_j^k}{S^k}&space;-&space;\cfrac{x_{ij}^k}{S^k}&space;\to&space;0" title="\bg_white  \cfrac{a_i^k}{S^k} \cfrac{b_j^k}{S^k} - \cfrac{x_{ij}^k}{S^k} \to 0" />
 
 Independence is not possible in general situation, so i will minimize N sums
 
-<img src="https://latex.codecogs.com/svg.image?\bg_white&space;\sum\limits_{i=1}^n&space;\sum\limits_{j=1}^m&space;\left[\cfrac{a_i^k}{S^k}&space;\cfrac{b_j^k}{S^k}&space;-&space;\cfrac{x_{ij}^k}{S^k}\right]^2" title="\bg_white \sum\limits_{i=1}^n \sum\limits_{j=1}^m \left[\cfrac{a_i^k}{S^k} \cfrac{b_j^k}{S^k} - \cfrac{x_{ij}^k}{S^k}\right]^2" />
+<img src="https://latex.codecogs.com/gif.image?\dpi{110}&space;\bg_white&space;\sum\limits_{i=1}^n&space;\sum\limits_{j=1}^m&space;\left[\cfrac{a_i^k}{S^k}&space;\cfrac{b_j^k}{S^k}&space;-&space;\cfrac{x_{ij}^k}{S^k}\right]^2" title="\bg_white \sum\limits_{i=1}^n \sum\limits_{j=1}^m \left[\cfrac{a_i^k}{S^k} \cfrac{b_j^k}{S^k} - \cfrac{x_{ij}^k}{S^k}\right]^2" />
 
 by minimizing equivalent
 
-<img src="https://latex.codecogs.com/svg.image?\bg_white&space;\sum\limits_{i=1}^n\sum\limits_{j=1}^m&space;\left({x^k_{ij}}\right)^2" title="\bg_white \sum\limits_{i=1}^n\sum\limits_{j=1}^m \left({x^k_{ij}}\right)^2" />
+<img src="https://latex.codecogs.com/gif.image?\dpi{110}&space;\bg_white&space;\sum\limits_{i=1}^n\sum\limits_{j=1}^m&space;\left({x^k_{ij}}\right)^2" title="\bg_white \sum\limits_{i=1}^n\sum\limits_{j=1}^m \left({x^k_{ij}}\right)^2" />
