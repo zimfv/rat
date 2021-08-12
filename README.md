@@ -3,19 +3,19 @@
 
 There are two aggregated tables with some concided columns:
 
-| Name | $A_1$ |  $A_2$ | ... | $A_n$ |
+| Name | A_1 | A_2 | ... | A_n |
 | --- | --- | --- | --- | --- |
-| $\text{Name}_1$ | $a_1^1$ | $a_2^1$ | ... | $a_n^1$ |
-| $\text{Name}_2$ | $a_1^2$ | $a_2^2$ | ... | $a_n^2$ |
+| Name_1$ | $a_1^1$ | $a_2^1$ | ... | $a_n^1$ |
+| Name_2$ | $a_1^2$ | $a_2^2$ | ... | $a_n^2$ |
 | ... | ... | ... | ... | ... |
-| $\text{Name}_N$ | $a_1^N$ | $a_2^N$ | ... | $a_n^N$ |
+| Name_N$ | $a_1^N$ | $a_2^N$ | ... | $a_n^N$ |
 
-| Name | $B_1$ |  $B_2$ | ... | $B_m$ |
+| Name | B_1 | B_2 | ... | B_m |
 | --- | --- | --- | --- | --- |
-| $\text{Name}_1$ | $b_1^1$ | $b_2^1$ | ... | $b_m^1$ |
-| $\text{Name}_2$ | $b_1^2$ | $b_2^2$ | ... | $b_m^2$ |
+| Name_1 | $b_1^1$ | $b_2^1$ | ... | $b_m^1$ |
+| Name_2 | $b_1^2$ | $b_2^2$ | ... | $b_m^2$ |
 | ... | ... | ... | ... | ... |
-| $\text{Name}_N$ | $b_1^N$ | $b_2^N$ | ... | $b_m^N$ |
+| Name_N | $b_1^N$ | $b_2^N$ | ... | $b_m^N$ |
 
 Where
 
@@ -33,13 +33,13 @@ I want to "restore" (disaggregate) them somehow to get new table
 
 | Name | A | B | X |
 | --- | --- | --- | --- |
-| $\text{Name}_1$ | $A_1$ | $B_1$ | $x_{1, 1}^1$ |
-| $\text{Name}_1$ | $A_1$ | $B_2$ | $x_{1, 2}^1$ |
+| Name_1 | A_1 | B_1 | $x_{1, 1}^1$ |
+| Name_1 | A_1 | B_2 | $x_{1, 2}^1$ |
 | ... | ... | ... | ... |
-| $\text{Name}_1$ | $A_n$ | $B_m$ | $x_{n, m}^1$ |
-| $\text{Name}_2$ | $A_1$ | $B_1$ | $x_{1, 1}^2$ |
+| Name_1 | A_n | B_m | $x_{n, m}^1$ |
+| Name_2 | A_1 | B_1 | $x_{1, 1}^2$ |
 | ... | ... | ... | ... |
-| $\text{Name}_N$ | $A_n$ | $B_m$ | $x_{n, m}^N$ |
+| Name_N | A_n | B_m | $x_{n, m}^N$ |
 
 Such that
 
