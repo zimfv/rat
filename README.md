@@ -25,7 +25,7 @@ $
 
 <img src="https://latex.codecogs.com/svg.image?\sum\limits_{i=1}^n&space;a_i^k&space;=&space;\sum\limits_{j=1}^m&space;b_j^k&space;=&space;S^k" title="\sum\limits_{i=1}^n a_i^k = \sum\limits_{j=1}^m b_j^k = S^k" />
 
-<img src="https://latex.codecogs.com/svg.image?\bg_white&space;\inline&space;\sum\limits_{i=1}^n&space;a_i^k&space;=&space;\sum\limits_{j=1}^m&space;b_j^k&space;=&space;S^k" title="\bg_white \inline \sum\limits_{i=1}^n a_i^k = \sum\limits_{j=1}^m b_j^k = S^k" />
+<img src="https://latex.codecogs.com/gif.image?\dpi{110}&space;\bg_white&space;\sum\limits_{i=1}^n&space;a_i^k&space;=&space;\sum\limits_{j=1}^m&space;b_j^k&space;=&space;S^k" title="\bg_white \sum\limits_{i=1}^n a_i^k = \sum\limits_{j=1}^m b_j^k = S^k" />
 
 I want to "restore" (disaggregate) them somehow to get new table
 
