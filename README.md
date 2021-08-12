@@ -17,7 +17,16 @@ There are two aggregated tables with some concided columns:
 | ... | ... | ... | ... | ... |
 | Name_N | $b_1^N$ | $b_2^N$ | ... | $b_m^N$ |
 
-<table background="URL">
+<style type="text/css">
+   table {
+    background: maroon; /* Цвет фона таблицы */
+    color: white; /* Цвет текста */
+   }
+   td {
+    background: navy; /* Цвет фона ячеек */
+   }
+  </style>
+<table>
   <tr>
     <td> Name </td><td> A_1 </td><td> A_2 </td><td> ... </td><td> A_n </td>
   </tr>
