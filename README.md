@@ -3,7 +3,7 @@
 
 There are two aggregated tables with some concided columns:
 
-| Name | A_1 |  <img src="https://latex.codecogs.com/gif.latex?A_2"/> | ... | $A_n$ |
+| Name | $A_1$ |  $A_2$ | ... | $A_n$ |
 | --- | --- | --- | --- | --- |
 | $\text{Name}_1$ | $a_1^1$ | $a_2^1$ | ... | $a_n^1$ |
 | $\text{Name}_2$ | $a_1^2$ | $a_2^2$ | ... | $a_n^2$ |
@@ -19,10 +19,10 @@ There are two aggregated tables with some concided columns:
 
 Where
 
-<img src="https://latex.codecogs.com/gif.latex?
+$
 \sum\limits_{i=1}^n a_i^k =
 \sum\limits_{j=1}^m b_j^k = S^k
-"/>
+$
 
 I want to "restore" (disaggregate) them somehow to get new table
 
@@ -38,13 +38,13 @@ I want to "restore" (disaggregate) them somehow to get new table
 
 Such that
 
-<img src="https://latex.codecogs.com/gif.latex?
+$
 \begin{cases}
 a^k_i = \sum\limits_{j=1}^m x^k_{ij}
 b^k_i = \sum\limits_{i=1}^n x^k_{ij}
 \end{cases}
 \forall i \in \{1, ..., n\}, j \in \{1, ..., m\}, k \in \{1, ..., N\}
-"/>
+$
 
 
 ## Solving the problem
