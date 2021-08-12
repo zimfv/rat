@@ -35,7 +35,7 @@ I want to "restore" (disaggregate) them somehow to get new table
 
 Such that
 
-<img src="https://latex.codecogs.com/gif.image?\dpi{110}&space;\bg_white&space;\inline&space;\begin{cases}&space;a^k_i&space;=&space;\sum\limits_{j=1}^m&space;x^k_{ij}&space;\&space;b^k_i&space;=&space;\sum\limits_{i=1}^n&space;x^k_{ij}&space;\end{cases}&space;\forall&space;i&space;\in&space;{1,&space;...,&space;n},&space;j&space;\in&space;{1,&space;...,&space;m},&space;k&space;\in&space;{1,&space;...,&space;N}" title="\bg_white \inline \begin{cases} a^k_i = \sum\limits_{j=1}^m x^k_{ij} \ b^k_i = \sum\limits_{i=1}^n x^k_{ij} \end{cases} \forall i \in {1, ..., n}, j \in {1, ..., m}, k \in {1, ..., N}" />
+<img src="https://latex.codecogs.com/gif.image?\dpi{110}&space;\bg_white&space;\inline&space;\begin{cases}&space;a^k_i&space;=&space;\sum\limits_{j=1}^m&space;x^k_{ij}&space;\&space;b^k_i&space;=&space;\sum\limits_{i=1}^n&space;x^k_{ij}&space;\end{cases}&space;\forall&space;i&space;\in&space;{1,&space;...,&space;n},&space;j&space;\in&space;{1,&space;...,&space;m},&space;k&space;\in&space;{1,&space;...,&space;N}" title="\bg_white \inline \begin{cases} a^k_i = \sum\limits_{j=1}^m x^k_{ij} \\ b^k_i = \sum\limits_{i=1}^n x^k_{ij} \end{cases} \forall i \in {1, ..., n}, j \in {1, ..., m}, k \in {1, ..., N}" />
 
 ## Solving the problem
 
