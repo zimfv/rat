@@ -51,14 +51,19 @@ $
 ## Solving the problem
 
 Of course there exists a lot of solves for that's system. So I make a guess that results are most independent. 
+
 $$
 \cfrac{a_i^k}{S^k} \cfrac{b_j^k}{S^k} - \cfrac{x_{ij}^k}{S^k} \to 0
 $$
+
 Independence is not possible in general situation, so i will minimize N sums
+
 $$
 \sum\limits_{i=1}^n \sum\limits_{j=1}^m \left[\cfrac{a_i^k}{S^k} \cfrac{b_j^k}{S^k} - \cfrac{x_{ij}^k}{S^k}\right]^2
 $$
+
 by minimizing equivalent
+
 $$
 \sum\limits_{i=1}^n\sum\limits_{j=1}^m \left({x^k_{ij}}\right)^2
 $$
