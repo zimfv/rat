@@ -19,7 +19,7 @@ There are two aggregated tables with some concided columns:
 
 <table>
   <tr>
-    <td>...</td>
+    <td> Name </td><td> A_1 </td><td> A_2 </td><td> ... </td><td> A_n </td>
   </tr>
 </table>
 
