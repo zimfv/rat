@@ -20,9 +20,9 @@ There are two aggregated tables with some concided columns:
 Where
 
 $
-\sum\limits_{i=1}^n a_i^k =
-\sum\limits_{j=1}^m b_j^k = S^k
+\sum\limits_{i=1}^n a_i^k = \sum\limits_{j=1}^m b_j^k = S^k
 $
+<img src="https://latex.codecogs.com/svg.image?\sum\limits_{i=1}^n&space;a_i^k&space;=&space;\sum\limits_{j=1}^m&space;b_j^k&space;=&space;S^k" title="\sum\limits_{i=1}^n a_i^k = \sum\limits_{j=1}^m b_j^k = S^k" />
 
 I want to "restore" (disaggregate) them somehow to get new table
 
@@ -40,7 +40,7 @@ Such that
 
 $
 \begin{cases}
-a^k_i = \sum\limits_{j=1}^m x^k_{ij}
+a^k_i = \sum\limits_{j=1}^m x^k_{ij} \\
 b^k_i = \sum\limits_{i=1}^n x^k_{ij}
 \end{cases}
 \forall i \in \{1, ..., n\}, j \in \{1, ..., m\}, k \in \{1, ..., N\}
@@ -55,15 +55,18 @@ Of course there exists a lot of solves for that's system. So I make a guess that
 $$
 \cfrac{a_i^k}{S^k} \cfrac{b_j^k}{S^k} - \cfrac{x_{ij}^k}{S^k} \to 0
 $$
+<img src="https://latex.codecogs.com/svg.image?\cfrac{a_i^k}{S^k}&space;\cfrac{b_j^k}{S^k}&space;-&space;\cfrac{x_{ij}^k}{S^k}&space;\to&space;0" title="\cfrac{a_i^k}{S^k} \cfrac{b_j^k}{S^k} - \cfrac{x_{ij}^k}{S^k} \to 0" />
 
 Independence is not possible in general situation, so i will minimize N sums
 
 $$
 \sum\limits_{i=1}^n \sum\limits_{j=1}^m \left[\cfrac{a_i^k}{S^k} \cfrac{b_j^k}{S^k} - \cfrac{x_{ij}^k}{S^k}\right]^2
 $$
+<img src="https://latex.codecogs.com/svg.image?\sum\limits_{i=1}^n&space;\sum\limits_{j=1}^m&space;\left[\cfrac{a_i^k}{S^k}&space;\cfrac{b_j^k}{S^k}&space;-&space;\cfrac{x_{ij}^k}{S^k}\right]^2" title="\sum\limits_{i=1}^n \sum\limits_{j=1}^m \left[\cfrac{a_i^k}{S^k} \cfrac{b_j^k}{S^k} - \cfrac{x_{ij}^k}{S^k}\right]^2" />
 
 by minimizing equivalent
 
 $$
 \sum\limits_{i=1}^n\sum\limits_{j=1}^m \left({x^k_{ij}}\right)^2
 $$
+<img src="https://latex.codecogs.com/svg.image?\sum\limits_{i=1}^n\sum\limits_{j=1}^m&space;\left({x^k_{ij}}\right)^2" title="\sum\limits_{i=1}^n\sum\limits_{j=1}^m \left({x^k_{ij}}\right)^2" />
