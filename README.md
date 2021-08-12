@@ -5,7 +5,7 @@ There are two aggregated tables with some concided columns:
 
 | Name | A_1 | A_2 | ... | A_n |
 | --- | --- | --- | --- | --- |
-| Name_1 | $a_1^1$ <img src="https://latex.codecogs.com/gif.image?\dpi{110}&space;\bg_white&space;a_1^1" title="\bg_white a_1^1" /> | $a_2^1$ | ... | $a_n^1$ |
+| Name_1 | $a_1^1$ | $a_2^1$ | ... | $a_n^1$ |
 | Name_2 | $a_1^2$ | $a_2^2$ | ... | $a_n^2$ |
 | ... | ... | ... | ... | ... |
 | Name_N | $a_1^N$ | $a_2^N$ | ... | $a_n^N$ |
