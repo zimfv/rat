@@ -1,7 +1,11 @@
 # RAT - Restoring Aggregated Tables
 ## What's the problem?
 
+
+<!-- a normal html comment -->
 There are two aggregated tables with some concided columns:
+<!-- a normal html comment -->
+
 
 | Name | A_1 | A_2 | ... | A_n |
 | --- | --- | --- | --- | --- |
