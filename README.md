@@ -36,6 +36,7 @@ I want to "restore" (disaggregate) them somehow to get new table
 | Name_N | A_n | B_m | $x_{n, m}^N$ |
 
 Such that
+
 <!-- $ \begin{cases} a^k_i = \sum\limits_{j=1}^m x^k_{ij} \\ b^k_i = \sum\limits_{i=1}^n x^k_{ij} \end{cases} \forall i \in {1, ..., n}, j \in {1, ..., m}, k \in {1, ..., N} $ -->
 <img src="https://latex.codecogs.com/gif.image?\dpi{110}&space;\bg_white&space;\begin{cases}&space;a^k_i&space;=&space;\sum\limits_{j=1}^m&space;x^k_{ij}&space;\\&space;b^k_i&space;=&space;\sum\limits_{i=1}^n&space;x^k_{ij}&space;\end{cases}&space;\forall&space;i&space;\in&space;{1,&space;...,&space;n},&space;j&space;\in&space;{1,&space;...,&space;m},&space;k&space;\in&space;{1,&space;...,&space;N}" title="\bg_white \begin{cases} a^k_i = \sum\limits_{j=1}^m x^k_{ij} \\ b^k_i = \sum\limits_{i=1}^n x^k_{ij} \end{cases} \forall i \in {1, ..., n}, j \in {1, ..., m}, k \in {1, ..., N}" />
 
@@ -43,12 +44,15 @@ Such that
 
 Of course there exists a lot of solves for that's system. So I make a guess that results are most independent. 
 
+<!-- $ \cfrac{a_i^k}{S^k} \cfrac{b_j^k}{S^k} - \cfrac{x_{ij}^k}{S^k} \to 0 $ -->
 <img src="https://latex.codecogs.com/gif.image?\dpi{110}&space;\bg_white&space;&space;\cfrac{a_i^k}{S^k}&space;\cfrac{b_j^k}{S^k}&space;-&space;\cfrac{x_{ij}^k}{S^k}&space;\to&space;0" title="\bg_white  \cfrac{a_i^k}{S^k} \cfrac{b_j^k}{S^k} - \cfrac{x_{ij}^k}{S^k} \to 0" />
 
 Independence is not possible in general situation, so i will minimize N sums
 
+<!-- $ \sum\limits_{i=1}^n \sum\limits_{j=1}^m \left[\cfrac{a_i^k}{S^k} \cfrac{b_j^k}{S^k} - \cfrac{x_{ij}^k}{S^k}\right]^2 $ -->
 <img src="https://latex.codecogs.com/gif.image?\dpi{110}&space;\bg_white&space;\sum\limits_{i=1}^n&space;\sum\limits_{j=1}^m&space;\left[\cfrac{a_i^k}{S^k}&space;\cfrac{b_j^k}{S^k}&space;-&space;\cfrac{x_{ij}^k}{S^k}\right]^2" title="\bg_white \sum\limits_{i=1}^n \sum\limits_{j=1}^m \left[\cfrac{a_i^k}{S^k} \cfrac{b_j^k}{S^k} - \cfrac{x_{ij}^k}{S^k}\right]^2" />
 
 by minimizing equivalent
 
+<!-- $ \sum\limits_{i=1}^n\sum\limits_{j=1}^m \left({x^k_{ij}}\right)^2 $ -->
 <img src="https://latex.codecogs.com/gif.image?\dpi{110}&space;\bg_white&space;\sum\limits_{i=1}^n\sum\limits_{j=1}^m&space;\left({x^k_{ij}}\right)^2" title="\bg_white \sum\limits_{i=1}^n\sum\limits_{j=1}^m \left({x^k_{ij}}\right)^2" />
