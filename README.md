@@ -30,6 +30,7 @@ Where
 
 I want to "restore" (disaggregate) them somehow to get new table
 
+<!--
 | Name | A | B | X |
 | --- | --- | --- | --- |
 | Name_1 | A_1 | B_1 | $x_{1, 1}^1$ |
@@ -39,6 +40,8 @@ I want to "restore" (disaggregate) them somehow to get new table
 | Name_2 | A_1 | B_1 | $x_{1, 1}^2$ |
 | ... | ... | ... | ... |
 | Name_N | A_n | B_m | $x_{n, m}^N$ |
+-->
+<img src="https://latex.codecogs.com/gif.image?\dpi{110}&space;\bg_white&space;\inline&space;\begin{tabular}{|c|c|c|c|}\hline\textbf{Name}&space;&&space;\textbf{A}&space;&&space;\textbf{B}&space;&&space;\textbf{X}&space;\\\hline$Name_1$&space;&&space;$A_1$&space;&&space;$B_2$&space;&&space;$x_{1,&space;2}^1$&space;\\\hline$\cdots$&space;&&space;$\cdots$&space;&&space;$\cdots$&space;&&space;$\cdots$&space;\\\hline$Name_1$&space;&&space;$A_n$&space;&&space;$B_m$&space;&&space;$x_{n,&space;m}^1$&space;\\\hline$Name_2$&space;&&space;$A_1$&space;&&space;$B_1$&space;&&space;$x_{1,&space;1}^2$&space;\\\hline$\cdots$&space;&&space;$\cdots$&space;&&space;$\cdots$&space;&&space;$\cdots$&space;\\\hline$Name_N$&space;&&space;$A_n$&space;&&space;$B_m$&space;&&space;$x_{n,&space;m}^N$&space;\\\hline\end{tabular}" title="\bg_white \inline \begin{tabular}{|c|c|c|c|}\hline\textbf{Name} & \textbf{A} & \textbf{B} & \textbf{X} \\\hline$Name_1$ & $A_1$ & $B_2$ & $x_{1, 2}^1$ \\\hline$\cdots$ & $\cdots$ & $\cdots$ & $\cdots$ \\\hline$Name_1$ & $A_n$ & $B_m$ & $x_{n, m}^1$ \\\hline$Name_2$ & $A_1$ & $B_1$ & $x_{1, 1}^2$ \\\hline$\cdots$ & $\cdots$ & $\cdots$ & $\cdots$ \\\hline$Name_N$ & $A_n$ & $B_m$ & $x_{n, m}^N$ \\\hline\end{tabular}" />
 
 Such that
 
