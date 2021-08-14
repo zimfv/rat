@@ -3,7 +3,7 @@
 
 There are two aggregated tables with some concided columns:
 
-<table bgcolor="#ffffff">
+<table bgcolor=#ffffff>
   <tr>
     <td>...</td>
   </tr>
