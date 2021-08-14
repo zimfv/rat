@@ -3,22 +3,25 @@
 
 There are two aggregated tables with some concided columns:
 
+<!--
 | Name | A_1 | A_2 | ... | A_n |
 | --- | --- | --- | --- | --- |
 | Name_1 | $a_1^1$ | $a_2^1$ | ... | $a_n^1$ |
 | Name_2 | $a_1^2$ | $a_2^2$ | ... | $a_n^2$ |
 | ... | ... | ... | ... | ... |
 | Name_N | $a_1^N$ | $a_2^N$ | ... | $a_n^N$ |
-
+-->
 <img src="https://latex.codecogs.com/gif.image?\dpi{110}&space;\bg_white&space;&space;\begin{tabular}{|c|c|c|c|c|}\hline\textbf{Name}&space;&&space;$\textbf{A}_1$&space;&&space;$\textbf{A}_2$&space;&&space;$\cdots$&space;&&space;$\textbf{A}_n$&space;\\\hline$Name_1$&space;&&space;$a_1^1$&space;&&space;$a_2^1$&space;&&space;$\cdots$&space;&&space;$a_n^1$&space;\\\hline$Name_2$&space;&&space;$a_1^2$&space;&&space;$a_2^2$&space;&&space;$\cdots$&space;&&space;$a_n^2$&space;\\\hline$\cdots$&space;&&space;$\cdots$&space;&&space;$\cdots$&space;&&space;$\cdots$&space;&&space;$\cdots$&space;\\\hline$Name_N$&space;&&space;$a_1^N$&space;&&space;$a_2^N$&space;&&space;$\cdots$&space;&&space;$a_n^N$&space;\\\hline\end{tabular}" title="\bg_white \begin{tabular}{|c|c|c|c|c|}\hline\textbf{Name} & $\textbf{A}_1$ & $\textbf{A}_2$ & $\cdots$ & $\textbf{A}_n$ \\\hline$Name_1$ & $a_1^1$ & $a_2^1$ & $\cdots$ & $a_n^1$ \\\hline$Name_2$ & $a_1^2$ & $a_2^2$ & $\cdots$ & $a_n^2$ \\\hline$\cdots$ & $\cdots$ & $\cdots$ & $\cdots$ & $\cdots$ \\\hline$Name_N$ & $a_1^N$ & $a_2^N$ & $\cdots$ & $a_n^N$ \\\hline\end{tabular}" />
 
-
+<!--
 | Name | B_1 | B_2 | ... | B_m |
 | --- | --- | --- | --- | --- |
 | Name_1 | $b_1^1$ | $b_2^1$ | ... | $b_m^1$ |
 | Name_2 | $b_1^2$ | $b_2^2$ | ... | $b_m^2$ |
 | ... | ... | ... | ... | ... |
 | Name_N | $b_1^N$ | $b_2^N$ | ... | $b_m^N$ |
+-->
+<img src="https://latex.codecogs.com/gif.image?\dpi{110}&space;\bg_white&space;\inline&space;\begin{tabular}{|c|c|c|c|c|}\hline\textbf{Name}&space;&&space;$\textbf{B}_1$&space;&&space;$\textbf{B}_2$&space;&&space;$\cdots$&space;&&space;$\textbf{B}_m$&space;\\\hline$Name_1$&space;&&space;$b_1^1$&space;&&space;$b_2^1$&space;&&space;$\cdots$&space;&&space;$b_m^1$&space;\\\hline$Name_2$&space;&&space;$b_1^2$&space;&&space;$b_2^2$&space;&&space;$\cdots$&space;&&space;$b_m^2$&space;\\\hline$\cdots$&space;&&space;$\cdots$&space;&&space;$\cdots$&space;&&space;$\cdots$&space;&&space;$\cdots$&space;\\\hline$Name_N$&space;&&space;$b_1^N$&space;&&space;$b_2^N$&space;&&space;$\cdots$&space;&&space;$b_m^N$&space;\\\hline\end{tabular}" title="\bg_white \inline \begin{tabular}{|c|c|c|c|c|}\hline\textbf{Name} & $\textbf{B}_1$ & $\textbf{B}_2$ & $\cdots$ & $\textbf{B}_m$ \\\hline$Name_1$ & $b_1^1$ & $b_2^1$ & $\cdots$ & $b_m^1$ \\\hline$Name_2$ & $b_1^2$ & $b_2^2$ & $\cdots$ & $b_m^2$ \\\hline$\cdots$ & $\cdots$ & $\cdots$ & $\cdots$ & $\cdots$ \\\hline$Name_N$ & $b_1^N$ & $b_2^N$ & $\cdots$ & $b_m^N$ \\\hline\end{tabular}" />
 
 Where
 
