@@ -3,26 +3,15 @@
 
 There are two aggregated tables with some concided columns:
 
-<?xml version="1.0" encoding="utf-8"?>
-<svg version="1.1" 
-     xmlns="http://www.w3.org/2000/svg"
-     xmlns:xlink="http://www.w3.org/1999/xlink"
-     width="100" height="50"
->
-<table bgcolor=#ffffff>
-  <tr>
-    <td>...</td>
-  </tr>
-</table>
-</svg>
-
-
 | Name | A_1 | A_2 | ... | A_n |
 | --- | --- | --- | --- | --- |
 | Name_1 | $a_1^1$ | $a_2^1$ | ... | $a_n^1$ |
 | Name_2 | $a_1^2$ | $a_2^2$ | ... | $a_n^2$ |
 | ... | ... | ... | ... | ... |
 | Name_N | $a_1^N$ | $a_2^N$ | ... | $a_n^N$ |
+
+<img src="https://latex.codecogs.com/gif.image?\dpi{110}&space;\bg_white&space;&space;\begin{tabular}{|c|c|c|c|c|}\hline\textbf{Name}&space;&&space;$\textbf{A}_1$&space;&&space;$\textbf{A}_2$&space;&&space;$\cdots$&space;&&space;$\textbf{A}_n$&space;\\\hline$Name_1$&space;&&space;$a_1^1$&space;&&space;$a_2^1$&space;&&space;$\cdots$&space;&&space;$a_n^1$&space;\\\hline$Name_2$&space;&&space;$a_1^2$&space;&&space;$a_2^2$&space;&&space;$\cdots$&space;&&space;$a_n^2$&space;\\\hline$\cdots$&space;&&space;$\cdots$&space;&&space;$\cdots$&space;&&space;$\cdots$&space;&&space;$\cdots$&space;\\\hline$Name_N$&space;&&space;$a_1^N$&space;&&space;$a_2^N$&space;&&space;$\cdots$&space;&&space;$a_n^N$&space;\\\hline\end{tabular}" title="\bg_white \begin{tabular}{|c|c|c|c|c|}\hline\textbf{Name} & $\textbf{A}_1$ & $\textbf{A}_2$ & $\cdots$ & $\textbf{A}_n$ \\\hline$Name_1$ & $a_1^1$ & $a_2^1$ & $\cdots$ & $a_n^1$ \\\hline$Name_2$ & $a_1^2$ & $a_2^2$ & $\cdots$ & $a_n^2$ \\\hline$\cdots$ & $\cdots$ & $\cdots$ & $\cdots$ & $\cdots$ \\\hline$Name_N$ & $a_1^N$ & $a_2^N$ & $\cdots$ & $a_n^N$ \\\hline\end{tabular}" />
+
 
 | Name | B_1 | B_2 | ... | B_m |
 | --- | --- | --- | --- | --- |
