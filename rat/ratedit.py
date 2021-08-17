@@ -66,11 +66,11 @@ def roll_strong(table, cols_names, cols_target, cols_values, index_prefix='col_'
         Info about columns
     
     """
-    table = table.sort_values(by=[i for i in np.concatenate([cols_names, cols_target])]).reset_index() 
+    table = table.sort_values(by=list(np.concatenate([cols_names, cols_target]))).reset_index() 
     
-    res_col_names = table[cols_target].drop_duplicates()
-    res_col_names = pd.DataFrame(np.repeat(res_col_names.values, len(cols_values), axis=0), columns=cols_target)
-    res_col_names[value_name] = np.repeat(cols_values, len(table[cols_target].drop_duplicates()))
+    res_col_names = table[cols_target].drop_duplicates().reset_index(drop=True) 
+    res_col_names = res_col_names.iloc[np.repeat(np.arange(len(res_col_names)), len(cols_values))].reset_index(drop=True)
+    res_col_names[value_name] = list(cols_values)*len(table[cols_target].drop_duplicates())
     res_col_names.index = np.char.add(index_prefix, res_col_names.index.astype(str))
     
     res_names = table[cols_names].drop_duplicates().reset_index(drop=True) 
