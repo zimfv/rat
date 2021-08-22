@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 from rat.ratmath import get_lines, restore_line
+from rat.ratedit import roll_strong
 
 
 def get_names_and_targets(table_a, table_b, name_cols=None, targets_a=None, targets_b=None):
@@ -165,3 +166,105 @@ def restore_table(table_a, table_b,
     table_res[name_res] = np.concatenate(lines_res)
     
     return table_res
+
+
+def restore_alot(tables, name_cols, tab_names=None, name_res='X', 
+                 tab_name_prefix='Table_', name_fluid='__FLUID__', 
+                 integer=False, nonneg=True, solver='SCS', 
+                 correct=True, print_status=False, print_time=False, 
+                 throw_sums_error=False):
+    """
+    Returns table - consistently restored from =tables.
+    
+    Parameters:
+    -----------
+    tables : list
+        List of tables
+    
+    name_cols : array-like
+        List of name-containing columns names (from all tables)
+    
+    tab_names : array-like or None
+        List of value names for each table
+        If it's None, then it will be defined.
+    
+    name_res : string
+        Name of result value column
+    
+    tab_name_prefix : string
+        Prefix for generete tab_names if it's None.
+        
+    name_fluid : string
+        name_res in interim tables
+    
+    integer : bool
+        Should the solve be integer?
+        Use correct solver. Some of them must be installed separately.
+        https://www.cvxpy.org/tutorial/advanced/index.html
+        
+    nonneg : bool
+        Should the solve be nonnegative?
+        
+    solver : string
+        Solver keyword argument
+    
+    correct: bool
+        Should mistake be corrected?
+    
+    print_status : bool
+        Should status be printed, when the problem be solved?
+    
+    print_time : bool
+        Should time for every restoring be printed?
+    
+    throw_sums_error: bool
+        Should the program be broken, where line_a and line_b has no equivalunt sums?
+    
+    Returns:
+    --------
+    table_res : DataFrame
+        "Restored" table
+    
+    """
+    if tab_names is None:
+        tab_names = np.char.add(tab_name_prefix, np.arange(len(tables)).astype(str))
+    if len(tables) > len(tab_names):
+        raise ValueError('Different list lengths.\nlen(val_names) < len(tables)')
+    
+    if len(tables) == 0:
+        return pd.DataFrame()
+    if len(tables) == 1:
+        return tables[0]
+    
+    if print_time:
+        start = time.monotonic()
+        
+    big = restore_table(tables[0], tables[1], name_cols=name_cols, 
+                        name_a=tab_names[0], name_b=tab_names[1], name_res=name_res, 
+                        integer=integer, nonneg=nonneg, solver=solver, 
+                        correct=correct, print_status=print_status, 
+                        throw_sums_error=throw_sums_error)
+    if print_time:
+        message = 'Tables ' + tab_names[0] + ' and ' + tab_names[1] + ' were disaggregated by '
+        message += str('%.4f' % (time.monotonic() - start)) + ' seconds.'
+        print(message)
+        
+    for i in range(2, len(tables)):
+        if print_time:
+            start = time.monotonic()
+            
+        big, big_names = roll_strong(big, cols_names=name_cols, 
+                                     cols_target=np.setdiff1d(big.columns, np.append(name_cols, name_res)),
+                                     cols_values=[name_res])
+        big = restore_table(big, tables[i], name_cols=name_cols, 
+                            name_a=name_fluid, name_b=tab_names[i], name_res=name_res, 
+                            integer=integer, nonneg=nonneg, solver=solver, 
+                            correct=correct, print_status=print_status, 
+                            throw_sums_error=throw_sums_error)
+        big = big.merge(big_names, how='left', left_on=name_fluid, right_index=True)
+        big = big[np.concatenate([name_cols, tab_names[:i+1], [name_res]])]
+        if print_time:
+            message = 'Table ' + tab_names[i] + ' was disaggregated and added to result by '
+            message += str('%.4f' % (time.monotonic() - start)) + ' seconds.'
+            print(message)
+    return big
