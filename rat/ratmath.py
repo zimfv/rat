@@ -1,7 +1,6 @@
 import numpy as np
 import pandas as pd
 import cvxpy as cp
-
  
 def get_lines(table, name_cols=[], val_cols=None, sort=True):
     """
@@ -74,7 +73,7 @@ def get_system(line_a, line_b):
     return matrix, r
 
 
-def get_problem(line_a, line_b, integer=False, nonneg=True):
+def get_problem(line_a, line_b, integer=False, nonneg=True, obj_type='square_covs'):
     """
     Returns cvxpy-problem and variable.
     
@@ -94,6 +93,12 @@ def get_problem(line_a, line_b, integer=False, nonneg=True):
     nonneg : bool
         Should the solve be nonnegative?
         
+    obj_type : str or function
+        Type of minimizing object.
+        If that is function, then will be minimize value obj_type(x) by x,
+        Else:
+            'squares' : minimize sum (x_ij)^2
+            'square_covs' : minimize sum (s*x_ij - a_i*b_j)^2
     
     Returns:
     --------
@@ -107,12 +112,22 @@ def get_problem(line_a, line_b, integer=False, nonneg=True):
     A, r = map(lambda i: i[:-1], get_system(line_a, line_b))
     x = cp.Variable(len(line_a)*len(line_b), integer=integer, nonneg=nonneg)
     constraints = [A @ x == r]
-    objective = cp.Minimize(cp.sum_squares(x))
+    
+    if obj_type == 'squares':
+        objective = cp.Minimize(cp.sum_squares(x))
+    elif obj_type == 'square_covs':
+        s = line_a.sum()
+        long_a = np.repeat(line_a, len(line_b))
+        long_b = np.concatenate([line_b for i in line_a])
+        objective = cp.Minimize(cp.sum_squares(s*x - long_a*long_b))
+    else:
+        objective = cp.Minimize(obj_type(x))
+        
     prob = cp.Problem(objective, constraints)
     return prob, x
 
 
-def restore_line(line_a, line_b, integer=False, nonneg=True, solver='SCS', 
+def restore_line(line_a, line_b, integer=False, nonneg=True, obj_type='square_covs', solver='SCS', 
                  correct=True, print_status=False, throw_sums_error=True):
     """
     Returns line vector restored from two lines (optimized by minimizing squares sum)
@@ -133,6 +148,13 @@ def restore_line(line_a, line_b, integer=False, nonneg=True, solver='SCS',
     nonneg : bool
         Should the solve be nonnegative?
         
+    obj_type : str or function
+        Type of minimizing object.
+        If that is function, then will be minimize value obj_type(x) by x,
+        Else:
+            'squares' : minimize sum (x_ij)^2
+            'square_covs' : minimize sum (s*x_ij - a_i*b_j)^2
+    
     solver : string
         Solver keyword argument.
     
@@ -155,7 +177,7 @@ def restore_line(line_a, line_b, integer=False, nonneg=True, solver='SCS',
     if (line_a.sum() != line_b.sum()) and throw_sums_error:
         print((line_a.sum() != line_b.sum()), throw_sums_error, (line_a.sum() != line_b.sum()) and throw_sums_error)
         raise ValueError('Different sums.')
-    prob, x = get_problem(line_a, line_b, integer=integer, nonneg=nonneg)
+    prob, x = get_problem(line_a, line_b, integer=integer, nonneg=nonneg, obj_type=obj_type)
     prob.solve(solver=solver)
     if print_status:
         print("Status: ", prob.status)

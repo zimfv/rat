@@ -84,7 +84,7 @@ def get_rows_target_names(targets_a, targets_b):
 def restore_table(table_a, table_b, 
                   name_cols=None, targets_a=None, targets_b=None, 
                   name_a='A', name_b='B', name_res='X', 
-                  integer=False, nonneg=True, solver='SCS', 
+                  integer=False, nonneg=True, obj_type='square_covs', solver='SCS', 
                   correct=True, print_status=False, throw_sums_error=True):
     """
     Returns one simple-restored table ("simple" means "do not roll column to columns")
@@ -160,7 +160,7 @@ def restore_table(table_a, table_b,
     
     lines_a = get_lines(table_a, name_cols=list(name_cols), val_cols=list(targets_a), sort=True)
     lines_b = get_lines(table_b, name_cols=list(name_cols), val_cols=list(targets_b), sort=True)
-    lines_res = [restore_line(lines_a[i], lines_b[i], integer=integer, nonneg=nonneg, 
+    lines_res = [restore_line(lines_a[i], lines_b[i], integer=integer, nonneg=nonneg, obj_type=obj_type, 
                               solver=solver, correct=correct, print_status=print_status, 
                               throw_sums_error=throw_sums_error) for i in range(len(lines_a))]
     table_res[name_res] = np.concatenate(lines_res)
@@ -170,7 +170,7 @@ def restore_table(table_a, table_b,
 
 def restore_alot(tables, name_cols, tab_names=None, name_res='X', 
                  tab_name_prefix='Table_', name_fluid='__FLUID__', 
-                 integer=False, nonneg=True, solver='SCS', 
+                 integer=False, nonneg=True, obj_type='square_covs', solver='SCS', 
                  correct=True, print_status=False, print_time=False, 
                  throw_sums_error=False):
     """
@@ -241,7 +241,7 @@ def restore_alot(tables, name_cols, tab_names=None, name_res='X',
         
     big = restore_table(tables[0], tables[1], name_cols=name_cols, 
                         name_a=tab_names[0], name_b=tab_names[1], name_res=name_res, 
-                        integer=integer, nonneg=nonneg, solver=solver, 
+                        integer=integer, nonneg=nonneg, obj_type=obj_type, solver=solver, 
                         correct=correct, print_status=print_status, 
                         throw_sums_error=throw_sums_error)
     if print_time:
@@ -258,7 +258,7 @@ def restore_alot(tables, name_cols, tab_names=None, name_res='X',
                                      cols_values=[name_res])
         big = restore_table(big, tables[i], name_cols=name_cols, 
                             name_a=name_fluid, name_b=tab_names[i], name_res=name_res, 
-                            integer=integer, nonneg=nonneg, solver=solver, 
+                            integer=integer, nonneg=nonneg, obj_type=obj_type, solver=solver, 
                             correct=correct, print_status=print_status, 
                             throw_sums_error=throw_sums_error)
         big = big.merge(big_names, how='left', left_on=name_fluid, right_index=True)
