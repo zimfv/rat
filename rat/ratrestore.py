@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 from rat.ratmath import get_lines, restore_line
 from rat.ratedit import roll_strong
+import time
 
 
 def get_names_and_targets(table_a, table_b, name_cols=None, targets_a=None, targets_b=None):
