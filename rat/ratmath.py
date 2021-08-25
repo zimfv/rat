@@ -73,7 +73,7 @@ def get_system(line_a, line_b):
     return matrix, r
 
 
-def get_problem(line_a, line_b, integer=False, nonneg=True, obj_type='square_covs'):
+def get_problem(line_a, line_b, integer=False, nonneg=True, obj_type='dependences'):
     """
     Returns cvxpy-problem and variable.
     
@@ -97,8 +97,8 @@ def get_problem(line_a, line_b, integer=False, nonneg=True, obj_type='square_cov
         Type of minimizing object.
         If that is function, then will be minimize value obj_type(x) by x,
         Else:
-            'squares' : minimize sum (x_ij)^2
-            'square_covs' : minimize sum (s*x_ij - a_i*b_j)^2
+            'squares' : minimize sum of squares : (x_ij)^2
+            'dependeces' : minimize sum of dependence values : (s*x_ij - a_i*b_j)^2
     
     Returns:
     --------
@@ -115,7 +115,7 @@ def get_problem(line_a, line_b, integer=False, nonneg=True, obj_type='square_cov
     
     if obj_type == 'squares':
         objective = cp.Minimize(cp.sum_squares(x))
-    elif obj_type == 'square_covs':
+    elif obj_type == 'dependences':
         s = line_a.sum()
         long_a = np.repeat(line_a, len(line_b))
         long_b = np.concatenate([line_b for i in line_a])
@@ -127,7 +127,7 @@ def get_problem(line_a, line_b, integer=False, nonneg=True, obj_type='square_cov
     return prob, x
 
 
-def restore_line(line_a, line_b, integer=False, nonneg=True, obj_type='square_covs', solver='SCS', 
+def restore_line(line_a, line_b, integer=False, nonneg=True, obj_type='dependences', solver='SCS', 
                  correct=True, print_status=False, throw_sums_error=True):
     """
     Returns line vector restored from two lines (optimized by minimizing squares sum)
@@ -152,8 +152,8 @@ def restore_line(line_a, line_b, integer=False, nonneg=True, obj_type='square_co
         Type of minimizing object.
         If that is function, then will be minimize value obj_type(x) by x,
         Else:
-            'squares' : minimize sum (x_ij)^2
-            'square_covs' : minimize sum (s*x_ij - a_i*b_j)^2
+            'squares' : minimize sum of squares : (x_ij)^2
+            'dependeces' : minimize sum of dependence values : (s*x_ij - a_i*b_j)^2
     
     solver : string
         Solver keyword argument.

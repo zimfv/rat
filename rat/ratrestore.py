@@ -85,7 +85,7 @@ def get_rows_target_names(targets_a, targets_b):
 def restore_table(table_a, table_b, 
                   name_cols=None, targets_a=None, targets_b=None, 
                   name_a='A', name_b='B', name_res='X', 
-                  integer=False, nonneg=True, obj_type='square_covs', solver='SCS', 
+                  integer=False, nonneg=True, obj_type='dependences', solver='SCS', 
                   correct=True, print_status=False, throw_sums_error=True):
     """
     Returns one simple-restored table ("simple" means "do not roll column to columns")
@@ -127,6 +127,13 @@ def restore_table(table_a, table_b,
     nonneg : bool
         Should the solve be nonnegative?
         
+    obj_type : str or function
+        Type of minimizing object.
+        If that is function, then will be minimize value obj_type(x) by x,
+        Else:
+            'squares' : minimize sum of squares : (x_ij)^2
+            'dependences' : minimize sum of dependence values : (s*x_ij - a_i*b_j)^2
+            
     solver : string
         Solver keyword argument
     
@@ -171,7 +178,7 @@ def restore_table(table_a, table_b,
 
 def restore_alot(tables, name_cols, tab_names=None, name_res='X', 
                  tab_name_prefix='Table_', name_fluid='__FLUID__', 
-                 integer=False, nonneg=True, obj_type='square_covs', solver='SCS', 
+                 integer=False, nonneg=True, obj_type='dependences', solver='SCS', 
                  correct=True, print_status=False, print_time=False, 
                  throw_sums_error=False):
     """
@@ -205,6 +212,13 @@ def restore_alot(tables, name_cols, tab_names=None, name_res='X',
         
     nonneg : bool
         Should the solve be nonnegative?
+        
+    obj_type : str or function
+        Type of minimizing object.
+        If that is function, then will be minimize value obj_type(x) by x,
+        Else:
+            'squares' : minimize sum of squares : (x_ij)^2
+            'dependences' : minimize sum of dependence values : (s*x_ij - a_i*b_j)^2
         
     solver : string
         Solver keyword argument
