@@ -91,8 +91,12 @@ df_employment
 df_environment
 ```
 
+| | District | Urban | Suburban | Rural |
+| --- |  --- |  --- |  --- |  --- |
+| 0 | East Forests | 3866 | 1510 | 6397 |
+| 1 | North Mountains | 3438 | 5779 | 8250 |
 
-We want to "restore" that by makung them more independence. That we can make with function `restore_table` from `ratrestore` module
+We want to "restore" that by making them more independence. That we can make with function `restore_table` from `ratrestore` module
 
 ```python
 from rat.ratrestore import restore_table
