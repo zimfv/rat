@@ -122,6 +122,7 @@ ratedit.roll_weak(df_family, ['Single', 'Marriged', 'Widower'], value_name='Fami
 ```
 
 |  | District | Sex | Family Status | Persons |
+| --- | --- | --- | --- | --- | 
 | 0 | East Forests | Female | Single | 2545 | 
 | 1 | East Forests | Female | Marriged | 2248 | 
 | 2 | East Forests | Female | Widower | 314 | 
