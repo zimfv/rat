@@ -113,8 +113,8 @@ But we want to make one column __Family Status__ from columns __Single__, __Marr
 We can use function `roll_weak` from package `ratedit`
 
 ```python
-from rat import ratedit
-ratedit.roll_weak(df_family, ['Single', 'Marriged', 'Widower'], value_name='Family Status', res_name='Persons')
+from rat.ratedit ipmort roll_weak
+roll_weak(df_family, ['Single', 'Marriged', 'Widower'], value_name='Family Status', res_name='Persons')
 ```
 
 |  | District | Sex | Family Status | Persons |
