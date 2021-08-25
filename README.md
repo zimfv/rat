@@ -71,10 +71,10 @@ Or just minimize
 
 There are two tables: __employment__ with columns __District__, __Agriculture__, __Industry__, __Production__, __Service__; and __environment__ with columns __District__, __Urban__, __Suburban__, __Rural__. So they have two same columns: __District__ and __Agriculture__.
 
-
-'''python
+```python
 import pandas as pd
 
 df_employment = pd.read_csv('tables/employment.csv')
 df_environment = pd.read_csv('tables/environment.csv')
-'''
+```
+
