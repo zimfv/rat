@@ -60,20 +60,24 @@ Independence is not possible in general situation, so i will minimize N sums
 <!-- $ \sum\limits_{i=1}^n \sum\limits_{j=1}^m \left[\cfrac{a_i^k}{S^k} \cfrac{b_j^k}{S^k} - \cfrac{x_{ij}^k}{S^k}\right]^2 $ -->
 <img src="https://latex.codecogs.com/gif.image?\dpi{110}&space;\bg_white&space;\sum\limits_{i=1}^n&space;\sum\limits_{j=1}^m&space;\left[\cfrac{a_i^k}{S^k}&space;\cfrac{b_j^k}{S^k}&space;-&space;\cfrac{x_{ij}^k}{S^k}\right]^2" title="\bg_white \sum\limits_{i=1}^n \sum\limits_{j=1}^m \left[\cfrac{a_i^k}{S^k} \cfrac{b_j^k}{S^k} - \cfrac{x_{ij}^k}{S^k}\right]^2" />
 
-Or just minimize
+Or we can just minimize
 
 <!-- $ \sum\limits_{i=1}^n\sum\limits_{j=1}^m \left({x^k_{ij}}\right)^2 $ -->
 <img src="https://latex.codecogs.com/gif.image?\dpi{110}&space;\bg_white&space;\sum\limits_{i=1}^n\sum\limits_{j=1}^m&space;\left({x^k_{ij}}\right)^2" title="\bg_white \sum\limits_{i=1}^n\sum\limits_{j=1}^m \left({x^k_{ij}}\right)^2" />
 
 
-## Usage example
+## Usage examples
 ### Restoring
+
+```python
+import pandas as pd
+from rat import ratrestore
+```
+
 
 There are two tables: __employment__ with columns __District__, __Agriculture__, __Industry__, __Production__, __Service__; and __environment__ with columns __District__, __Urban__, __Suburban__, __Rural__. So they have two same columns: __District__ and __Agriculture__.
 
 ```python
-import pandas as pd
-
 df_employment = pd.read_csv('tables/employment.csv')
 df_environment = pd.read_csv('tables/environment.csv')
 ```
