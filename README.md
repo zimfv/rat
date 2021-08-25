@@ -137,12 +137,18 @@ We can use function `roll_strong` from package `ratedit` to get two tables
 ```python
 from rat.ratedit import roll_strong
 df_strong, cols_strong = roll_strong(df_c, ['District'], ['Sex'], ['Single', 'Marriged', 'Widower'])
+```
+The first is interesting table with renamed columns:
+
+```python
 df_strong
 ```
 | | District | col_0 | col_1 | col_2 | col_3 | col_4 | col_5 | 
 | --- | --- | --- | --- | --- | --- | --- | --- | 
 | 0 | East Forests | 2545 | 1702 | 2248 | 2920 | 314 | 2044 |
 | 1 | North Mountains | 3059 | 3207 | 3352 | 4578 | 617 | 2654 |
+
+And the second is explanation of new column names:
 
 ```python
 cols_strong
