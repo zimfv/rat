@@ -64,3 +64,17 @@ Or just minimize
 
 <!-- $ \sum\limits_{i=1}^n\sum\limits_{j=1}^m \left({x^k_{ij}}\right)^2 $ -->
 <img src="https://latex.codecogs.com/gif.image?\dpi{110}&space;\bg_white&space;\sum\limits_{i=1}^n\sum\limits_{j=1}^m&space;\left({x^k_{ij}}\right)^2" title="\bg_white \sum\limits_{i=1}^n\sum\limits_{j=1}^m \left({x^k_{ij}}\right)^2" />
+
+
+## Usage example
+### Restoring
+
+There are two tables: __employment__ with columns __District__, __Agriculture__, __Industry__, __Production__, __Service__; and __environment__ with columns __District__, __Urban__, __Suburban__, __Rural__. So they have two same columns: __District__ and __Agriculture__.
+
+
+'''python
+import pandas as pd
+
+df_employment = pd.read_csv('tables/employment.csv')
+df_environment = pd.read_csv('tables/environment.csv')
+'''
