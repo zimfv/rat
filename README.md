@@ -107,7 +107,32 @@ df_family
 | 1 | East Forests | Male | 1702 | 2920 | 2044 |
 | 2 | North Mountains | Female | 3059 | 3352 | 617 |
 | 3 | North Mountains | Male | 3207 | 4578 | 2654 |
+<!--
 | 4 | South Deserts | Female | 3197 | 2526 | 1516 |
 | 5 | South Deserts | Male | 1899 | 1693 | 2625 |
 | 6 | West Steppes | Female | 3032 | 2312 | 1988 |
 | 7 | West Steppes | Male | 3756 | 3652 | 906 |
+-->
+
+But we want to make one column __Family Status__ from columns __Single__, __Marriged__ and __Widower__.
+
+We can use function `roll_weak` from package `ratedit`
+
+```python
+from rat import ratedit
+ratedit.roll_weak(df_family, ['Single', 'Marriged', 'Widower'], value_name='Family Status', res_name='Persons')
+'''
+
+|  | District | Sex | Family Status | Persons |
+| 0 | East Forests | Female | Single | 2545 | 
+| 1 | East Forests | Female | Marriged | 2248 | 
+| 2 | East Forests | Female | Widower | 314 | 
+| 3 | East Forests | Male | Single | 1702 | 
+| 4 | East Forests | Male | Marriged | 2920 | 
+| 5 | East Forests | Male | Widower | 2044 | 
+| 6 | North Mountains | Female | Single | 3059 | 
+| 7 | North Mountains | Female | Marriged | 3352 | 
+| 8 | North Mountains | Female | Widower | 617 | 
+| 9 | North Mountains | Male | Single | 3207 | 
+| 10 | North Mountains | Male | Marriged | 4578 | 
+| 11 | North Mountains | MalevWidower | 2654 | 
