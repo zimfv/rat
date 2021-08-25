@@ -70,15 +70,12 @@ Or we can just minimize
 ### Restoring
 
 ```python
-```
-
-There are two tables: __employment__ with columns __District__, __Agriculture__, __Industry__, __Production__, __Service__; and __environment__ with columns __District__, __Urban__, __Suburban__, __Rural__. So there is column __District__ in both tables.
-
-```python
 import pandas as pd
 df_employment = pd.read_csv('tables/employment.csv')
 df_environment = pd.read_csv('tables/environment.csv')
 ```
+
+There are two tables: __employment__ with columns __District__, __Agriculture__, __Industry__, __Production__, __Service__; and __environment__ with columns __District__, __Urban__, __Suburban__, __Rural__. So there is column __District__ in both tables.
 
 We want to "restore" that by makung them more independence. That we can make with function `restore_table` from `ratrestore` module
 
