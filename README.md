@@ -67,7 +67,7 @@ Or we can just minimize
 
 
 ## Usage examples
-### Restoring
+### Restoring two tables
 
 ```python
 import pandas as pd
@@ -76,6 +76,21 @@ df_environment = pd.read_csv('tables/environment.csv')
 ```
 
 There are two tables: __employment__ with columns __District__, __Agriculture__, __Industry__, __Production__, __Service__; and __environment__ with columns __District__, __Urban__, __Suburban__, __Rural__. So there is column __District__ in both tables.
+
+
+```python
+df_employment
+```
+
+|	 | District | Agriculture | Industry | Production | Service |
+| --- | --- | --- |  --- |  --- |  --- | 
+| 0 | East Forests | 2063 | 3644 | 504 | 5562 |
+| 1 | North Mountains | 1258 | 3807 | 862 | 11540 |
+
+```python
+df_environment
+```
+
 
 We want to "restore" that by makung them more independence. That we can make with function `restore_table` from `ratrestore` module
 
