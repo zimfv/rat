@@ -105,10 +105,9 @@ df_family
 | --- | --- | --- | --- | --- | --- |
 | 0 |	East Forests | Female | 2545 | 2248 | 314 |
 | 1 | East Forests | Male | 1702 | 2920 | 2044 |
-| 2 | North Mountains | Female | 3059 | 3352 | 617 | 
-
-| 3 	North Mountains 	Male 	3207 	4578 	2654
-| 4 	South Deserts 	Female 	3197 	2526 	1516
-| 5 	South Deserts 	Male 	1899 	1693 	2625
-| 6 	West Steppes 	Female 	3032 	2312 	1988
-| 7 	West Steppes 	Male 	3756 	3652 	906
+| 2 | North Mountains | Female | 3059 | 3352 | 617 |
+| 3 | North Mountains | Male | 3207 | 4578 | 2654 |
+| 4 | South Deserts | Female | 3197 | 2526 | 1516 |
+| 5 | South Deserts | Male | 1899 | 1693 | 2625 |
+| 6 | West Steppes | Female | 3032 | 2312 | 1988 |
+| 7 | West Steppes | Male | 3756 | 3652 | 906 |
