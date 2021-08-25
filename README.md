@@ -128,3 +128,30 @@ roll_weak(df_family, ['Single', 'Marriged', 'Widower'], value_name='Family Statu
 | 9 | North Mountains | Male | Single | 3207 | 
 | 10 | North Mountains | Male | Marriged | 4578 | 
 | 11 | North Mountains | Male | Widower | 2654 | 
+
+
+Another situation: we want to get df)family with unique values in column __District__ by making columns from values of column __Sex__.
+
+We can use function `roll_strong` from package `ratedit` to get two tables
+
+```python
+from rat.ratedit import roll_strong
+df_strong, cols_strong = roll_strong(df_c, ['District'], ['Sex'], ['Single', 'Marriged', 'Widower'])
+df_strong
+```
+| | District | col_0 | col_1 | col_2 | col_3 | col_4 | col_5 | 
+| --- | --- | --- | --- | --- | --- | --- | --- | 
+| 0 | East Forests | 2545 | 1702 | 2248 | 2920 | 314 | 2044 |
+| 1 | North Mountains | 3059 | 3207 | 3352 | 4578 | 617 | 2654 |
+
+```python
+cols_strong
+```
+|       |      Sex |      Value | 
+| --- | --- | --- |
+| col_0 |   Female |     Single | 
+| col_1 |   Female |   Marriged | 
+| col_2 |   Female |    Widower | 
+| col_3 |     Male |     Single | 
+| col_4 |     Male |   Marriged | 
+| col_5 |     Male |    Widower | 
