@@ -84,11 +84,11 @@ df_environment = pd.read_csv('tables/environment.csv')
 We want to "restore" that by makung them more independence. That we can make with function `restore_table` from `ratrestore` module
 
 ```python
-ratrestore.restore_table(df_employment, df_environment)
+df = ratrestore.restore_table(df_employment, df_environment)
 ```
 
 If we want to "restore" that by making minimal square sums, and call result column 'Result', we can do things like that:
 
 ```python
-ratrestore.restore_table(df_employment, df_environment, name_res='X', obj_type='squares')
+df = ratrestore.restore_table(df_employment, df_environment, name_res='X', obj_type='squares')
 ```
