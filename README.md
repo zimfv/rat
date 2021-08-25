@@ -74,11 +74,19 @@ import pandas as pd
 from rat import ratrestore
 ```
 
-
-There are two tables: __employment__ with columns __District__, __Agriculture__, __Industry__, __Production__, __Service__; and __environment__ with columns __District__, __Urban__, __Suburban__, __Rural__. So they have two same columns: __District__ and __Agriculture__.
+There are two tables: __employment__ with columns __District__, __Agriculture__, __Industry__, __Production__, __Service__; and __environment__ with columns __District__, __Urban__, __Suburban__, __Rural__. So there is column __District__ in both tables.
 
 ```python
 df_employment = pd.read_csv('tables/employment.csv')
 df_environment = pd.read_csv('tables/environment.csv')
 ```
+
+We want to "restore" that by makung them more independence. That we can make with function `restore_table` from ratrestore modole
+
+```python
+from rat import ratrestore
+
+ratrestore.restore_table(df_employment, df_environment)
+```
+
 
