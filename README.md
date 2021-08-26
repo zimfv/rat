@@ -218,7 +218,7 @@ To restore them consistently, we can use `restore_alot` function from package `r
 ```python
 from rat.ratrestore import restore_alot
 
-df_alot = restore_alot([df_employment, df_enviroment, df_family_strong], name_cols=['District'], 
+df_alot = restore_alot([df_employment, df_environment, df_family_strong], name_cols=['District'], 
                        tab_names=['Employment', 'Environment', 'Family'], name_res='Count')
 df_alot.head(5)
 ```
