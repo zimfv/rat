@@ -152,7 +152,7 @@ But we want to make one column __Family Status__ from columns __Single__, __Marr
 We can use function `roll_weak` from package `ratedit`
 
 ```python
-from rat.ratedit ipmort roll_weak
+from rat.ratedit import roll_weak
 df_family_weak = roll_weak(df_family, ['Single', 'Marriged', 'Widower'], value_name='Family Status', res_name='Persons')
 df_family_weak
 ```
@@ -178,7 +178,7 @@ We can use function `roll_strong` from package `ratedit` to get two tables
 
 ```python
 from rat.ratedit import roll_strong
-df_family_strong, cols_family_strong = roll_strong(df_c, ['District'], ['Sex'], ['Single', 'Marriged', 'Widower'], value_name='Family status')
+df_family_strong, cols_family_strong = roll_strong(df_family, ['District'], ['Sex'], ['Single', 'Marriged', 'Widower'], value_name='Family status')
 ```
 The first is interesting table with renamed columns:
 
@@ -218,11 +218,11 @@ To restore them consistently, we can use `restore_alot` function from package `r
 ```python
 from rat.ratrestore import restore_alot
 
-df_alot = restore_alot([df_employment, df_enviroment, df_family_strong], name_cols=['District']
-                       tab_names=['Employment', 'Enviroment', 'Family'], name_res='Count')
+df_alot = restore_alot([df_employment, df_enviroment, df_family_strong], name_cols=['District'], 
+                       tab_names=['Employment', 'Environment', 'Family'], name_res='Count')
 df_alot.head(5)
 ```
-| | District | Employment | Enviroment | Family | Count | 
+| | District | Employment | Environment | Family | Count | 
 | --- | --- | --- | --- | --- | --- |
 | 0 | East Forests | Agriculture | Rural | col_0 | 242.319898 | 
 | 1 | East Forests | Agriculture | Rural | col_1 | 162.054407 | 
@@ -234,10 +234,10 @@ But __Family__ column doess not look beautiful. So let do some not difficult act
 
 ```python
 df_alot = df_alot.merge(cols_family_strong, how='left', left_on='Family', right_index=True)
-df_alot = df_alot[np.concatenate([['District'], ['Employment', 'Enviroment'], cols_family_strong.columns, ['Count']])]
+df_alot = df_alot[np.concatenate([['District'], ['Employment', 'Environment'], cols_family_strong.columns, ['Count']])]
 df_alot.head(5)
 ```
-| | District | Employment | Enviroment | Sex | Family status | Count | 
+| | District | Employment | Environment | Sex | Family status | Count | 
 | --- | --- | --- | --- | --- | --- | --- |
 | 0 | East Forests | Agriculture | Rural | Female |     Single | 242.319898 | 
 | 1 | East Forests | Agriculture | Rural | Female |   Marriged | 162.054407 | 
