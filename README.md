@@ -204,7 +204,9 @@ cols_family_strong
 | col_4 |     Male |   Marriged | 
 | col_5 |     Male |    Widower | 
 
-You can change `index_prefix` parameter from `'col_'` to any, which you like.
+You can change `index_prefix` parameter from default `'col_'` to any you like.
+
+And you can change `value_name` parameter from default `'Value'`.
 
 
 ### Restoring alot of tables
@@ -219,6 +221,14 @@ To restore them consistently, we can use `restore_alot` function from package `r
 from rat.ratrestore import restore_alot
 
 df_alot = restore_alot([df_employment, df_enviroment, df_family_strong], name_cols=['District']
-                       ['Employment', 'Enviroment', 'Family']
-                )
+                       tab_names=['Employment', 'Enviroment', 'Family'], name_res='Count)
+df_alot.head(5)
 ```
+| | District | Employment | Enviroment | Family | Count | 
+| --- | --- | --- | --- | --- | --- |
+| 0 | East Forests | Agriculture | Rural | col_0 | 242.319898 | 
+| 1 | East Forests | Agriculture | Rural | col_1 | 162.054407 | 
+| 2 | East Forests | Agriculture | Rural | col_2 | 214.041309 | 
+| 3 | East Forests | Agriculture | Rural | col_3 | 278.025187 | 
+| 4 | East Forests | Agriculture | Rural | col_4 | 29.897229 | 
+
