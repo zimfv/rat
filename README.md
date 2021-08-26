@@ -178,7 +178,8 @@ We can use function `roll_strong` from package `ratedit` to get two tables
 
 ```python
 from rat.ratedit import roll_strong
-df_family_strong, cols_family_strong = roll_strong(df_c, ['District'], ['Sex'], ['Single', 'Marriged', 'Widower'])
+df_family_strong, cols_family_strong = roll_strong(df_c, ['District'], ['Sex'], ['Single', 'Marriged', 'Widower'], 
+                                                   value_name='Family status')
 ```
 The first is interesting table with renamed columns:
 
@@ -195,7 +196,7 @@ And the second is explanation of new column names:
 ```python
 cols_family_strong
 ```
-|       |      Sex |      Value | 
+|       |      Sex | Family status | 
 | --- | --- | --- |
 | col_0 |   Female |     Single | 
 | col_1 |   Female |   Marriged | 
@@ -205,8 +206,6 @@ cols_family_strong
 | col_5 |     Male |    Widower | 
 
 You can change `index_prefix` parameter from default `'col_'` to any you like.
-
-And you can change `value_name` parameter from default `'Value'`.
 
 
 ### Restoring alot of tables
