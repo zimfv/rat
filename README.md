@@ -119,8 +119,7 @@ df_restored.head(6)
 If we want to "restore" that by making minimal square sums, we can change parameter `obj_type` from default `'dependences'` to `'squares'`:
 
 ```python
-df_restored = restore_table(df_employment, df_environment, name_a='Employment', name_b='Environment', name_res='Count', 
-                            obj_type='squares')
+df_restored = restore_table(df_employment, df_environment, name_a='Employment', name_b='Environment', name_res='Count', obj_type='squares')
 df_restored.head(6)
 ```
 | |	District |	Employment |	Environment |	Count |
@@ -179,8 +178,7 @@ We can use function `roll_strong` from package `ratedit` to get two tables
 
 ```python
 from rat.ratedit import roll_strong
-df_family_strong, cols_family_strong = roll_strong(df_c, ['District'], ['Sex'], ['Single', 'Marriged', 'Widower'], 
-                                                   value_name='Family status')
+df_family_strong, cols_family_strong = roll_strong(df_c, ['District'], ['Sex'], ['Single', 'Marriged', 'Widower'], value_name='Family status')
 ```
 The first is interesting table with renamed columns:
 
