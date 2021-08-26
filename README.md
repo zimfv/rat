@@ -230,7 +230,7 @@ df_alot.head(5)
 | 3 | East Forests | Agriculture | Rural | col_3 | 278.025187 | 
 | 4 | East Forests | Agriculture | Rural | col_4 | 29.897229 | 
 
-But __Family__ column doess not look beautiful. So let do some not difficult actions:
+But __Family__ column does not look beautiful. So let do some not difficult actions:
 
 ```python
 df_alot = df_alot.merge(cols_family_strong, how='left', left_on='Family', right_index=True)
