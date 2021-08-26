@@ -158,7 +158,8 @@ We can use function `roll_weak` from package `ratedit`
 
 ```python
 from rat.ratedit ipmort roll_weak
-roll_weak(df_family, ['Single', 'Marriged', 'Widower'], value_name='Family Status', res_name='Persons')
+df_family_weak = roll_weak(df_family, ['Single', 'Marriged', 'Widower'], value_name='Family Status', res_name='Persons')
+df_family_weak
 ```
 
 |  | District | Sex | Family Status | Persons |
@@ -183,12 +184,12 @@ We can use function `roll_strong` from package `ratedit` to get two tables
 
 ```python
 from rat.ratedit import roll_strong
-df_strong, cols_strong = roll_strong(df_c, ['District'], ['Sex'], ['Single', 'Marriged', 'Widower'])
+df_family_strong, cols_family_strong = roll_strong(df_c, ['District'], ['Sex'], ['Single', 'Marriged', 'Widower'])
 ```
 The first is interesting table with renamed columns:
 
 ```python
-df_strong
+df_family_strong
 ```
 | | District | col_0 | col_1 | col_2 | col_3 | col_4 | col_5 | 
 | --- | --- | --- | --- | --- | --- | --- | --- | 
@@ -198,7 +199,7 @@ df_strong
 And the second is explanation of new column names:
 
 ```python
-cols_strong
+cols_family_strong
 ```
 |       |      Sex |      Value | 
 | --- | --- | --- |
@@ -208,3 +209,8 @@ cols_strong
 | col_3 |     Male |     Single | 
 | col_4 |     Male |   Marriged | 
 | col_5 |     Male |    Widower | 
+
+
+### Restoring alot of tables
+
+...
