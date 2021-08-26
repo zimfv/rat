@@ -102,14 +102,33 @@ We want to "restore" that by making them more independence. That we can make wit
 
 ```python
 from rat.ratrestore import restore_table
-restore_table(df_employment, df_environment)
+df_restored = restore_table(df_employment, df_environment, name_a='Employment', name_b='Environment', name_res='Count')
+df_restored.head(6)
 ```
 
-If we want to "restore" that by making minimal square sums, and call result column 'Result', we can do things like that:
+| |	District |	Employment |	Environment |	Count |
+| 0 |	East Forests |	Agriculture |	Rural |	1120.955661 |	
+| 1 |	East Forests |	Agriculture |	Suburban |	264.599508 |	
+| 2 |	East Forests |	Agriculture |	Urban |	677.444831 |	
+| 3 |	East Forests |	Industry |	Rural |	1980.010872 |	
+| 4 |	East Forests |	Industry |	Suburban |	467.377899 |	
+| 5 |	East Forests |	Industry |	Urban |	1196.611229 |	
+
+
+If we want to "restore" that by making minimal square sums, we can change parameter `obj_type` from default `'dependences'` to `'squares'`:
 
 ```python
-restore_table(df_employment, df_environment, name_res='X', obj_type='squares')
+restore_table(df_employment, df_environment, name_a='Employment', name_b='Environment', name_res='Count', obj_type='squares')
 ```
+
+| |	District |	Employment |	Environment |	Count |
+| 0 |	East Forests |	Agriculture |	Rural |	1268.107791 |	
+| 1 |	East Forests |	Agriculture |	Suburban |	244.740815 |	
+| 2 |	East Forests |	Agriculture |	Urban |	611.218573 |	
+| 3 |	East Forests |	Industry |	Rural |	2161.590402 |	
+| 4 |	East Forests |	Industry |	Suburban |	129.786239 |	
+| 5 |	East Forests |	Industry |	Urban |	1504.701185 |	
+
 
 ### Editing
 
