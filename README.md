@@ -107,6 +107,7 @@ df_restored.head(6)
 ```
 
 | |	District |	Employment |	Environment |	Count |
+| --- | --- | --- | --- | --- |
 | 0 |	East Forests |	Agriculture |	Rural |	1120.955661 |	
 | 1 |	East Forests |	Agriculture |	Suburban |	264.599508 |	
 | 2 |	East Forests |	Agriculture |	Urban |	677.444831 |	
@@ -118,10 +119,13 @@ df_restored.head(6)
 If we want to "restore" that by making minimal square sums, we can change parameter `obj_type` from default `'dependences'` to `'squares'`:
 
 ```python
-restore_table(df_employment, df_environment, name_a='Employment', name_b='Environment', name_res='Count', obj_type='squares')
+df_restored = restore_table(df_employment, df_environment, name_a='Employment', name_b='Environment', name_res='Count', 
+                            obj_type='squares')
+df_restored.head(6)
 ```
 
 | |	District |	Employment |	Environment |	Count |
+| --- | --- | --- | --- | --- |
 | 0 |	East Forests |	Agriculture |	Rural |	1268.107791 |	
 | 1 |	East Forests |	Agriculture |	Suburban |	244.740815 |	
 | 2 |	East Forests |	Agriculture |	Urban |	611.218573 |	
