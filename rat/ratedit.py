@@ -120,3 +120,37 @@ def correct_table(table, columns, sums, by_div=True, by_add=True):
             line[np.argmax(abs(line))] += sums[i] - res.loc[index, columns].sum()
             res.loc[index, columns] = line
     return res
+
+def add_indexed_cols(table, column, col_names, drop=True):
+    """
+    Return table with added columns from indexed col_names table.
+    That use for adding col_names, geted by roll_strong
+    
+    Parameters:
+    -----------
+    table : DataFrame
+        Table itself
+    
+    column : str
+        Key-column name
+    
+    col_names : DataFrame
+        Indexed col_names table
+    
+    drop : bool
+        Should the key column be droped?
+        
+    Returns:
+    --------
+    res : DataFrame
+    
+    """
+    i, = np.where(table.columns == column)
+    i = i[0]
+    cols = np.concatenate([table.columns[:i], col_names.columns, table.columns[i:]])
+    if drop:
+        cols = cols[cols != column]
+    res = table.merge(col_names, how='left', left_on=column, right_index=True)
+    res = res[cols]
+    return res
+    
