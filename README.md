@@ -236,7 +236,7 @@ But __Family__ column doess not look beautiful. So let do some not difficult act
 
 ```python
 df_alot = df_alot.merge(cols_family_strong, how='left', left_on='Family', right_index=True)
-df_alot = df_alot[np.concatenate([['District'], 'Employment', 'Enviroment'], cols_family_strong.columns, ['Count']])]
+df_alot = df_alot[np.concatenate([['District'], ['Employment', 'Enviroment'], cols_family_strong.columns, ['Count']])]
 df_alot.head(5)
 ```
 | | District | Employment | Enviroment | Sex | Family status | Count | 
