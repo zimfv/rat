@@ -219,7 +219,7 @@ To restore them consistently, we can use `restore_alot` function from package `r
 from rat.ratrestore import restore_alot
 
 df_alot = restore_alot([df_employment, df_enviroment, df_family_strong], name_cols=['District']
-                       tab_names=['Employment', 'Enviroment', 'Family'], name_res='Count)
+                       tab_names=['Employment', 'Enviroment', 'Family'], name_res='Count')
 df_alot.head(5)
 ```
 | | District | Employment | Enviroment | Family | Count | 
