@@ -70,6 +70,7 @@ Or we can just minimize
 ### Restoring two tables
 
 ```python
+import numpy as np
 import pandas as pd
 ```
 
@@ -231,3 +232,10 @@ df_alot.head(5)
 | 3 | East Forests | Agriculture | Rural | col_3 | 278.025187 | 
 | 4 | East Forests | Agriculture | Rural | col_4 | 29.897229 | 
 
+But col_0, col_1 and other index stuff is not what we like. So let do some not difficult actions:
+
+```python
+df_alot = df_alot.merge(cols_family_strong, how='left', left_on='Family', right_index=True)
+df_alot = df_alot[np.concatenate([['District'], 'Employment', 'Enviroment'], cols_family_strong.columns, ['Count']])]
+df_alot.head(5)
+```
