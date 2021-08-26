@@ -86,7 +86,7 @@ df_employment
 | 0 | East Forests | 2063 | 3644 | 504 | 5562 |
 | 1 | North Mountains | 1258 | 3807 | 862 | 11540 |
 
-and __environment__ with columns __District__, __Urban__, __Suburban__, __Rural__. So there is column __District__ in both tables.
+and __environment__ with columns __District__, __Urban__, __Suburban__, __Rural__. 
 
 ```python
 df_environment = pd.read_csv('tables/environment.csv')
@@ -97,6 +97,8 @@ df_environment
 | --- |  --- |  --- |  --- |  --- |
 | 0 | East Forests | 3866 | 1510 | 6397 |
 | 1 | North Mountains | 3438 | 5779 | 8250 |
+
+So there is column __District__ in both tables.
 
 We want to "restore" that by making them more independence. That we can make with function `restore_table` from `ratrestore` module
 
