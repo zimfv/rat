@@ -232,10 +232,17 @@ df_alot.head(5)
 | 3 | East Forests | Agriculture | Rural | col_3 | 278.025187 | 
 | 4 | East Forests | Agriculture | Rural | col_4 | 29.897229 | 
 
-But col_0, col_1 and other index stuff is not what we like. So let do some not difficult actions:
+But __Family__ column doess not look beautiful. So let do some not difficult actions:
 
 ```python
 df_alot = df_alot.merge(cols_family_strong, how='left', left_on='Family', right_index=True)
 df_alot = df_alot[np.concatenate([['District'], 'Employment', 'Enviroment'], cols_family_strong.columns, ['Count']])]
 df_alot.head(5)
 ```
+| | District | Employment | Enviroment | Sex | Family status | Count | 
+| --- | --- | --- | --- | --- | --- | --- |
+| 0 | East Forests | Agriculture | Rural | Female |     Single | 242.319898 | 
+| 1 | East Forests | Agriculture | Rural | Female |   Marriged | 162.054407 | 
+| 2 | East Forests | Agriculture | Rural | Female |    Widower | 214.041309 | 
+| 3 | East Forests | Agriculture | Rural |   Male |     Single | 278.025187 | 
+| 4 | East Forests | Agriculture | Rural |   Male |   Marriged | 29.897229 | 
