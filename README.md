@@ -80,7 +80,6 @@ There are two tables: __employment__ with columns __District__, __Agriculture__,
 df_employment = pd.read_csv('tables/employment.csv')
 df_employment
 ```
-
 |	 | District | Agriculture | Industry | Production | Service |
 | --- | --- | --- |  --- |  --- |  --- | 
 | 0 | East Forests | 2063 | 3644 | 504 | 5562 |
@@ -92,7 +91,6 @@ and __environment__ with columns __District__, __Urban__, __Suburban__, __Rural_
 df_environment = pd.read_csv('tables/environment.csv')
 df_environment
 ```
-
 | | District | Urban | Suburban | Rural |
 | --- |  --- |  --- |  --- |  --- |
 | 0 | East Forests | 3866 | 1510 | 6397 |
@@ -107,7 +105,6 @@ from rat.ratrestore import restore_table
 df_restored = restore_table(df_employment, df_environment, name_a='Employment', name_b='Environment', name_res='Count')
 df_restored.head(6)
 ```
-
 | |	District |	Employment |	Environment |	Count |
 | --- | --- | --- | --- | --- |
 | 0 |	East Forests |	Agriculture |	Rural |	1120.955661 |	
@@ -125,7 +122,6 @@ df_restored = restore_table(df_employment, df_environment, name_a='Employment', 
                             obj_type='squares')
 df_restored.head(6)
 ```
-
 | |	District |	Employment |	Environment |	Count |
 | --- | --- | --- | --- | --- |
 | 0 |	East Forests |	Agriculture |	Rural |	1268.107791 |	
@@ -144,7 +140,6 @@ Suppose we have DataFrame `df_family`
 df_family = pd.read_csv('tables/family.csv')
 df_family
 ```
-
 |  | District | Sex | Single | Marriged | Widower |
 | --- | --- | --- | --- | --- | --- |
 | 0 |	East Forests | Female | 2545 | 2248 | 314 |
@@ -161,7 +156,6 @@ from rat.ratedit ipmort roll_weak
 df_family_weak = roll_weak(df_family, ['Single', 'Marriged', 'Widower'], value_name='Family Status', res_name='Persons')
 df_family_weak
 ```
-
 |  | District | Sex | Family Status | Persons |
 | --- | --- | --- | --- | --- | 
 | 0 | East Forests | Female | Single | 2545 | 
@@ -210,7 +204,21 @@ cols_family_strong
 | col_4 |     Male |   Marriged | 
 | col_5 |     Male |    Widower | 
 
+You can change `index_prefix` parameter from `'col_'` to any, which you like.
+
 
 ### Restoring alot of tables
 
-...
+If we want to restore many tables consistently (__employment__, __enviroment__ and __family__), we should edit them to same names columns and different value columns. 
+
+In our case that is just change `df_family` to `df_family_strong`. So we have three tables (`df_employment`, `df_enviroment` and `df_family_strong`) with name-column __District__.
+
+To restore them consistently, we can use `restore_alot` function from package `ratrestore`
+
+```python
+from rat.ratrestore import restore_alot
+
+df_alot = restore_alot([df_employment, df_enviroment, df_family_strong], name_cols=['District']
+                       ['Employment', 'Enviroment', 'Family']
+                )
+```
