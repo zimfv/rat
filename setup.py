@@ -1,13 +1,23 @@
-from setuptools import setup, find_packages
+import setuptools
 
+with open("README.md", "r", encoding="utf-8") as file:
+      long_description = file.read()
 
-setup(name='rat', 
-      version='0.1', 
-      url='https://github.com/zimfv/rat',
-      author='Fedor Zimin', 
-      author_email='zimfv@yandex.ru', 
+setuptools.setup(
+      name="rat-zimfv",
+      vesion="0.1",
+      author="Fedor Zimin",
+      author_email='zimfv@yandex.ru',
       description='RAT - Restoring Aggregated Tables',
-      packages=find_packages(include=['rat']),
-      long_description=open('README.md').read(), 
-      setup_requires=['numpy>=1.20.1', 'pandas>=1.2.1', 'cvxpy>=1.1.13']
+      long_description=long_description,
+      long_description_content_type="text/markdown",
+      url='https://github.com/zimfv/rat',
+      classifiers=[
+            "Programming Language :: Python :: 3",
+            "License :: OSI Approved :: MIT License",
+            "Operating System :: OS Independent",
+      ],
+      package_dir={"": "rat"},
+      packages=setuptools.find_packages(where="rat"),
+      python_requires=">=3.6",
 )
