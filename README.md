@@ -48,6 +48,7 @@ Such that
 <!-- $ \begin{cases} a^k_i = \sum\limits_{j=1}^m x^k_{ij} \\ b^k_i = \sum\limits_{i=1}^n x^k_{ij} \end{cases} \forall i \in {1, ..., n}, j \in {1, ..., m}, k \in {1, ..., N} $ -->
 <img src="https://latex.codecogs.com/gif.image?\dpi{110}&space;\bg_white&space;\begin{cases}&space;a^k_i&space;=&space;\sum\limits_{j=1}^m&space;x^k_{ij}&space;\\&space;b^k_i&space;=&space;\sum\limits_{i=1}^n&space;x^k_{ij}&space;\end{cases}&space;\forall&space;i&space;\in&space;{1,&space;...,&space;n},&space;j&space;\in&space;{1,&space;...,&space;m},&space;k&space;\in&space;{1,&space;...,&space;N}" title="\bg_white \begin{cases} a^k_i = \sum\limits_{j=1}^m x^k_{ij} \\ b^k_i = \sum\limits_{i=1}^n x^k_{ij} \end{cases} \forall i \in {1, ..., n}, j \in {1, ..., m}, k \in {1, ..., N}" />
 
+
 ## Solving the problem
 
 Of course there exists a lot of solves for that's system. So I make a guess that results are most independent. 
@@ -64,6 +65,23 @@ Or we can just minimize
 
 <!-- $ \sum\limits_{i=1}^n\sum\limits_{j=1}^m \left({x^k_{ij}}\right)^2 $ -->
 <img src="https://latex.codecogs.com/gif.image?\dpi{110}&space;\bg_white&space;\sum\limits_{i=1}^n\sum\limits_{j=1}^m&space;\left({x^k_{ij}}\right)^2" title="\bg_white \sum\limits_{i=1}^n\sum\limits_{j=1}^m \left({x^k_{ij}}\right)^2" />
+
+
+## About installation
+
+The first you should install another packages: [numpy](https://numpy.org/), [pandas](https://pandas.pydata.org/) and [cvxpy](https://www.cvxpy.org/).
+
+```
+pip install numpy
+```
+
+```
+pip install pandas
+```
+
+```
+pip install cvxpy
+```
 
 
 ## Usage examples
