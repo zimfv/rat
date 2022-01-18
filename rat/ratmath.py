@@ -1,7 +1,8 @@
 import numpy as np
 import pandas as pd
 import cvxpy as cp
- 
+from scipy.sparse import dok_matrix
+
 def get_lines(table, name_cols=[], val_cols=None, sort=True):
     """
     Returns lines of table. Line is vectored raw.
@@ -46,11 +47,10 @@ def get_system(line_a, line_b):
     line_b : ndarray
         vector
     
-    
     Returns:
     --------
-    matrix : ndarray
-        Matrix of size ()
+    matrix : dok_matrix
+        Sprase matrix of size (n+m, n*m)
         
     r : ndarray:
         Vector of size len(line_a) + len(line_b)
@@ -63,6 +63,7 @@ def get_system(line_a, line_b):
         line_a, line_b = line_a.astype(int), line_b.astype(int)
     
     r = np.concatenate([line_a, line_b])
+    '''
     matrix_a = np.concatenate(
         [
             np.concatenate([np.zeros(i*m), np.ones(m), np.zeros(m*(n-i-1))]).reshape([1, n*m]) for i in range(n)
@@ -70,7 +71,36 @@ def get_system(line_a, line_b):
     )
     matrix_b = np.concatenate([np.eye(m) for i in range(n)], axis=1)
     matrix = np.concatenate([matrix_a, matrix_b]).astype(int)
+    '''
+    matrix = dok_matrix((n+m, n*m), dtype=int)
+    for i in range(n):
+        for j in range(m):
+            matrix[i, m*i+j] = 1
+            matrix[n+j, m*i+j] = 1
     return matrix, r
+
+
+def get_line_maximums(line_a, line_b):
+    '''
+    Returns vector of maximal possible values for nonnegative condition
+    
+    Parameters:
+    -----------
+    line_a : ndarray
+        vector
+        
+    line_b : ndarray
+        vector
+    
+    
+    Returns:
+    --------
+    r : ndarray:
+        Vector of maximal possible values
+    '''
+    r = np.array([np.concatenate([line_a for i in line_b]), np.concatenate([line_b for i in line_a])])
+    r = np.min(r, axis=0)
+    return r
 
 
 def get_problem(line_a, line_b, integer=False, nonneg=True, obj_type='dependences'):
@@ -110,8 +140,12 @@ def get_problem(line_a, line_b, integer=False, nonneg=True, obj_type='dependence
     
     """
     A, r = map(lambda i: i[:-1], get_system(line_a, line_b))
-    x = cp.Variable(len(line_a)*len(line_b), integer=integer, nonneg=nonneg)
-    constraints = [A @ x == r]
+    if nonneg and integer:
+        x = cp.Variable(len(line_a)*len(line_b), integer=integer)
+        constraints = [A @ x == r, -x <= 0, x <= get_line_maximums(line_a, line_b)]
+    else:
+        x = cp.Variable(len(line_a)*len(line_b), integer=integer, nonneg=nonneg)
+        constraints = [A @ x == r]
     
     if obj_type == 'squares':
         objective = cp.Minimize(cp.sum_squares(x))

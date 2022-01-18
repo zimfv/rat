@@ -69,10 +69,14 @@ Or we can just minimize
 
 ## About installation
 
-The first you should install another packages: [numpy](https://numpy.org/), [pandas](https://pandas.pydata.org/) and [cvxpy](https://www.cvxpy.org/).
+The first you should install another packages: [numpy](https://numpy.org/), [scipy](https://scipy.org/), [pandas](https://pandas.pydata.org/) and [cvxpy](https://www.cvxpy.org/).
 
 ```
 pip install numpy
+```
+
+```
+pip install scipy
 ```
 
 ```
@@ -135,6 +139,8 @@ df_restored.head(6)
 
 
 If we want to "restore" that by making minimal square sums, we can change parameter `obj_type` from default `'dependences'` to `'squares'`:
+
+__Warning:__ That can be noncorrect.
 
 ```python
 df_restored = restore_table(df_employment, df_environment, name_a='Employment', name_b='Environment', name_res='Count', obj_type='squares')
