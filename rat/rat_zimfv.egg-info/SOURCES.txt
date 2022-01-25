@@ -5,4 +5,5 @@ setup.py
 rat/rat_zimfv.egg-info/PKG-INFO
 rat/rat_zimfv.egg-info/SOURCES.txt
 rat/rat_zimfv.egg-info/dependency_links.txt
+rat/rat_zimfv.egg-info/requires.txt
 rat/rat_zimfv.egg-info/top_level.txt
