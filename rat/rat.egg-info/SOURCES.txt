@@ -1,0 +1,9 @@
+LICENSE.txt
+README.md
+pyproject.toml
+setup.py
+rat/rat.egg-info/PKG-INFO
+rat/rat.egg-info/SOURCES.txt
+rat/rat.egg-info/dependency_links.txt
+rat/rat.egg-info/requires.txt
+rat/rat.egg-info/top_level.txt

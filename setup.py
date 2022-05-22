@@ -4,7 +4,7 @@ with open("README.md", "r", encoding="utf-8") as file:
     long_description = file.read()
 
 setuptools.setup(
-    name="tabular-rat-zimfv",
+    name="rat",
     version="0.0.2",
     author="Fedor Zimin",
     author_email='zimfv@yandex.ru',
