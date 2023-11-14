@@ -87,7 +87,7 @@ pip install pandas
 pip install cvxpy
 ```
 
-Then move 'rat' folder to a needed directory.
+Then move `rat` folder to a needed directory.
 
 
 ## Usage examples
