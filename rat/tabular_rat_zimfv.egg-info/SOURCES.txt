@@ -1,9 +1,0 @@
-LICENSE.txt
-README.md
-pyproject.toml
-setup.py
-rat/tabular_rat_zimfv.egg-info/PKG-INFO
-rat/tabular_rat_zimfv.egg-info/SOURCES.txt
-rat/tabular_rat_zimfv.egg-info/dependency_links.txt
-rat/tabular_rat_zimfv.egg-info/requires.txt
-rat/tabular_rat_zimfv.egg-info/top_level.txt
