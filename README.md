@@ -67,7 +67,7 @@ Or we can just minimize
 <img src="https://latex.codecogs.com/gif.image?\dpi{110}&space;\bg_white&space;\sum\limits_{i=1}^n\sum\limits_{j=1}^m&space;\left({x^k_{ij}}\right)^2" title="\bg_white \sum\limits_{i=1}^n\sum\limits_{j=1}^m \left({x^k_{ij}}\right)^2" />
 
 
-## About installation
+## Preparing to use
 
 The first you should install another packages: [numpy](https://numpy.org/), [scipy](https://scipy.org/), [pandas](https://pandas.pydata.org/) and [cvxpy](https://www.cvxpy.org/).
 
@@ -87,6 +87,8 @@ pip install pandas
 pip install cvxpy
 ```
 
+Then move 'rat' folder to a needed directory.
+
 
 ## Usage examples
 ### Restoring two tables
@@ -103,7 +105,7 @@ There are two tables: __employment__ with columns __District__, __Agriculture__,
 df_employment = pd.read_csv('tables/employment.csv')
 df_employment
 ```
-|	 | District | Agriculture | Industry | Production | Service |
+| | District | Agriculture | Industry | Production | Service |
 | --- | --- | --- |  --- |  --- |  --- | 
 | 0 | East Forests | 2063 | 3644 | 504 | 5562 |
 | 1 | North Mountains | 1258 | 3807 | 862 | 11540 |
